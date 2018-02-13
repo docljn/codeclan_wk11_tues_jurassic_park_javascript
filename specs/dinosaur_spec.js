@@ -14,4 +14,9 @@ describe("Dinosaur", function () {
     assert.strictEqual(actual, "Triceratops");
   });
 
+  it("should have a number of offspring annually", function () {
+    const actual = triceratops.annual_offspring;
+    assert.strictEqual(actual, 10);
+  });
+
 });
