@@ -9,7 +9,7 @@ describe("Park", function () {
 
   beforeEach(function () {
     park = new Park ();
-    triceratops = new Dinosaur ( "Triceratops", 10 ) ;
+    triceratops = new Dinosaur ("Triceratops", 10) ;
   });
 
   it("should start with an empty enclosure", function () {
@@ -19,7 +19,7 @@ describe("Park", function () {
 
   it("should be able to add a dinosaur", function () {
     park.addDinosaur(triceratops);
-    actual = park.getDinosaurCount;
+    actual = park.getDinosaurCount();
     assert.strictEqual(actual, 1);
   });
 
