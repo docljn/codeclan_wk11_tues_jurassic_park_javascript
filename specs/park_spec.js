@@ -19,9 +19,9 @@ describe("Park", function () {
     park = new Park ();
     triceratops = new Dinosaur ("Triceratops", 10) ;
     velociraptor = new Dinosaur ("Velociraptor", 20) ;
-    tRex = new Dinosaur ("TRex", 1) ;
+    tRex = new Dinosaur ("TRex", 2) ;
     velociraptor_2 = new Dinosaur ("Velociraptor", 20) ;
-    tRex_2 = new Dinosaur ("TRex", 1) ;
+    tRex_2 = new Dinosaur ("TRex", 2) ;
     park_full = new Park ();
     park_full.addDinosaur(triceratops);
     park_full.addDinosaur(velociraptor);
