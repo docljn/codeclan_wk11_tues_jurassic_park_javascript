@@ -19,6 +19,16 @@ Park.prototype.removeAllOfType = function (type) {
   }
 };
 
+Park.prototype.getDinosaursByMinimumAnnualOffspringCount = function (minimumNumber) {
+  let dinosaur_collection = [];
+  for (dinosaur of this.enclosure) {
+    if (dinosaur.annual_offspring >= minimumNumber) {
+      dinosaur_collection.push(dinosaur);
+    }
+  }
+  return dinosaur_collection;
+};
+
 
 
 module.exports = Park;

@@ -47,8 +47,8 @@ describe("Park", function () {
 
   it("should be able to return a list of all the dinosaurs with an offspring count of more than 2", function () {
     expected = [triceratops, velociraptor, velociraptor_2];
-    actual = park.getDinosaursByMinimumAnnualOffspringCount(3);
-    assert.strictEqual(actual, expected);
+    actual = park_full.getDinosaursByMinimumAnnualOffspringCount(3);
+    assert.deepStrictEqual(actual, expected);
   });
 
 });
