@@ -9,6 +9,8 @@ let velociraptor;
 let velociraptor_2;
 let tRex;
 let tRex_2;
+let tyrannosaurus;
+let dilophosaurus;
 
 
 describe("Park", function () {
@@ -26,6 +28,8 @@ describe("Park", function () {
     park_full.addDinosaur(tRex);
     park_full.addDinosaur(velociraptor_2);
     park_full.addDinosaur(tRex_2);
+    tyrannosaurus = new Dinosaur ("Tyrannosaurus", 3);
+    dilophosaurus = new Dinosaur ("Dilophosaurus", 0);
   });
 
   it("should start with an empty enclosure", function () {
@@ -49,6 +53,23 @@ describe("Park", function () {
     expected = [triceratops, velociraptor, velociraptor_2];
     actual = park_full.getDinosaursByMinimumAnnualOffspringCount(3);
     assert.deepStrictEqual(actual, expected);
+  });
+
+  // TODO: extension
+  it("should be able to calculate number of dinosaurs after 1 year starting with 1 dinosaur", function(){
+    park.addDinosaur(tyrannosaurus);  // assume tyrannosaurus has 3 offspring
+    assert.strictEqual(park.calculateDinosaurs(1), 4);
+  });
+
+  it("should be able to calculate number of dinosaurs after 2 years starting with 1 dinosaur", function(){
+    park.addDinosaur(tyrannosaurus);
+    assert.strictEqual(park.calculateDinosaurs(2), 16);
+  });
+
+  it("should be able to calculate number of dinosaur after year two starting with 2 dinosaurs", function(){
+    park.addDinosaur(tyrannosaurus);
+    park.addDinosaur(dilophosaurus); // assume dilophosaurus has ?? offspring
+    assert.strictEqual(park.calculateDinosaurs(2), 25);
   });
 
 });
