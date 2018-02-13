@@ -29,7 +29,7 @@ describe("Park", function () {
     park_full.addDinosaur(velociraptor_2);
     park_full.addDinosaur(tRex_2);
     tyrannosaurus = new Dinosaur ("Tyrannosaurus", 3);
-    dilophosaurus = new Dinosaur ("Dilophosaurus", 0);
+    dilophosaurus = new Dinosaur ("Dilophosaurus", 2);
   });
 
   it("should start with an empty enclosure", function () {
@@ -68,7 +68,7 @@ describe("Park", function () {
 
   it("should be able to calculate number of dinosaur after year two starting with 2 dinosaurs", function(){
     park.addDinosaur(tyrannosaurus);
-    park.addDinosaur(dilophosaurus); // assume dilophosaurus has ?? offspring
+    park.addDinosaur(dilophosaurus); // assume dilophosaurus has 2 offspring
     assert.strictEqual(park.calculateDinosaurs(2), 25);
   });
 

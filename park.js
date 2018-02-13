@@ -29,6 +29,19 @@ Park.prototype.getDinosaursByMinimumAnnualOffspringCount = function (minimumNumb
   return dinosaur_collection;
 };
 
+Park.prototype.breedingResult = function (dinosaur) {
+  return 1 + dinosaur.annual_offspring;
+}
+
+Park.prototype.calculateDinosaurs = function (numberOfYears) {
+  let dinosaur_count = 0;
+  for (dinosaur of this.enclosure) {
+    dinosaur_count += Math.pow(this.breedingResult(dinosaur), numberOfYears);
+    // for each year, the number of dinosaurs is increased by the number of dinosaurs * offspring, repeating
+  }
+  return dinosaur_count;
+};
+
 
 
 module.exports = Park;
