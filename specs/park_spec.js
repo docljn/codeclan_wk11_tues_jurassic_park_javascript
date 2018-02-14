@@ -47,8 +47,9 @@ describe("Park", function () {
 
   it("should be able to remove all dinosaurs of a particular type", function () {
     park_full.removeAllOfType("tRex");
-    const actual = park_full.getDinosaurCount();
-    assert.strictEqual(actual, 3);
+    const expected = [triceratops, velociraptor, velociraptor_2];
+    const actual = park_full.enclosure;
+    assert.deepStrictEqual(actual, expected);
   });
 
   it("should be able to return a list of all the dinosaurs with an offspring count of more than 2", function () {
@@ -58,6 +59,7 @@ describe("Park", function () {
   });
 
   // TODO: extension
+  //
   it("should be able to calculate number of dinosaurs after 1 year starting with 1 dinosaur", function(){
     park.addDinosaur(tyrannosaurus);  // assume tyrannosaurus has 3 offspring
     assert.strictEqual(park.calculateDinosaurs(1), 4);
