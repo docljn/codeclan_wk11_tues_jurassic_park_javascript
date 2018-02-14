@@ -28,6 +28,6 @@ module.exports = {
         ],
         "no-console": 1,
         "no-unreachable": 1,
-        "no-undef": 0
+        "no-undef": 1
     }
 };
