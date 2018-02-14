@@ -11,12 +11,14 @@ Park.prototype.addDinosaur = function (dinosaur) {
 };
 
 Park.prototype.removeAllOfType = function (type) {
+  let remainingDinosaurs = [];
   for (const dinosaur of this.enclosure) {
-    if (dinosaur.type.toLowerCase() == type.toLowerCase()) {
-      const index_to_remove = this.enclosure.indexOf(dinosaur);
-      this.enclosure.splice(index_to_remove, 1);
+    if (dinosaur.type.toLowerCase() !== type.toLowerCase()) {
+      const index_to_keep = this.enclosure.indexOf(dinosaur);
+      remainingDinosaurs.push(this.enclosure[index_to_keep]);
     }
   }
+  this.enclosure = remainingDinosaurs;
 };
 
 Park.prototype.getDinosaursByMinimumAnnualOffspringCount = function (minimumNumber) {
