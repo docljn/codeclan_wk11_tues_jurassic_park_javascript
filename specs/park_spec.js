@@ -1,3 +1,5 @@
+/*global describe, it, beforeEach*/
+
 const Park = require("../park");
 const assert = require("assert");
 const Dinosaur = require("../dinosaur");
