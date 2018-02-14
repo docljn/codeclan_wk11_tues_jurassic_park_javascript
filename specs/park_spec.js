@@ -15,9 +15,9 @@ let tyrannosaurus;
 let dilophosaurus;
 
 
-describe("Park", function () {
+describe("Park", function(){
 
-  beforeEach(function () {
+  beforeEach(function(){
     park = new Park ();
     triceratops = new Dinosaur ("Triceratops", 10) ;
     velociraptor = new Dinosaur ("Velociraptor", 20) ;
@@ -34,25 +34,25 @@ describe("Park", function () {
     dilophosaurus = new Dinosaur ("Dilophosaurus", 2);
   });
 
-  it("should start with an empty enclosure", function () {
+  it("should start with an empty enclosure", function(){
     const actual = park.getDinosaurCount();
     assert.strictEqual(actual, 0);
   });
 
-  it("should be able to add a dinosaur", function () {
+  it("should be able to add a dinosaur", function(){
     park.addDinosaur(triceratops);
     const actual = park.getDinosaurCount();
     assert.strictEqual(actual, 1);
   });
 
-  it("should be able to remove all dinosaurs of a particular type", function () {
+  it("should be able to remove all dinosaurs of a particular type", function(){
     park_full.removeAllOfType("tRex");
     const expected = [triceratops, velociraptor, velociraptor_2];
     const actual = park_full.enclosure;
     assert.deepStrictEqual(actual, expected);
   });
 
-  it("should be able to return a list of all the dinosaurs with an offspring count of more than 2", function () {
+  it("should be able to return a list of all the dinosaurs with an offspring count of more than 2", function(){
     const expected = [triceratops, velociraptor, velociraptor_2];
     const actual = park_full.getDinosaursByMinimumAnnualOffspringCount(3);
     assert.deepStrictEqual(actual, expected);

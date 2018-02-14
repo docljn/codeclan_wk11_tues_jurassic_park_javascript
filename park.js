@@ -1,17 +1,17 @@
-const Park = function() {
+const Park = function(){
   this.enclosure = new Array;
 };
 
-Park.prototype.getDinosaurCount = function () {
+Park.prototype.getDinosaurCount = function(){
   return this.enclosure.length;
 };
 
-Park.prototype.addDinosaur = function (dinosaur) {
+Park.prototype.addDinosaur = function(dinosaur){
   this.enclosure.push(dinosaur);
 };
 
-Park.prototype.removeAllOfType = function (type) {
-  let remainingDinosaurs = [];
+Park.prototype.removeAllOfType = function(type){
+  const remainingDinosaurs = [];
   for (const dinosaur of this.enclosure) {
     if (dinosaur.type.toLowerCase() !== type.toLowerCase()) {
       const index_to_keep = this.enclosure.indexOf(dinosaur);
@@ -21,7 +21,7 @@ Park.prototype.removeAllOfType = function (type) {
   this.enclosure = remainingDinosaurs;
 };
 
-Park.prototype.getDinosaursByMinimumAnnualOffspringCount = function (minimumNumber) {
+Park.prototype.getDinosaursByMinimumAnnualOffspringCount = function(minimumNumber){
   let dinosaur_collection = [];
   for (const dinosaur of this.enclosure) {
     if (dinosaur.annual_offspring >= minimumNumber) {
@@ -31,11 +31,11 @@ Park.prototype.getDinosaursByMinimumAnnualOffspringCount = function (minimumNumb
   return dinosaur_collection;
 };
 
-Park.prototype.breedingResult = function (dinosaur) {
+Park.prototype.breedingResult = function(dinosaur){
   return 1 + dinosaur.annual_offspring;
 };
 
-Park.prototype.calculateDinosaurs = function (numberOfYears) {
+Park.prototype.calculateDinosaurs = function(numberOfYears){
   let dinosaur_count = 0;
   for (const dinosaur of this.enclosure) {
     dinosaur_count += Math.pow(this.breedingResult(dinosaur), numberOfYears);
